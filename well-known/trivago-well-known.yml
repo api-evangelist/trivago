@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/* on trivago hosts
+host: https://www.trivago.com
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  file: trivago-security.txt
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+notes: >-
+  Only /.well-known/security.txt is published (RFC 9116). It points to a
+  vulnerability disclosure program at https://vdp.trivago.com and a policy at
+  https://www.trivago.com/cyber-security. No OIDC/OAuth discovery or api-catalog
+  documents are served.

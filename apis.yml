@@ -1,7 +1,30 @@
 aid: trivago
+accessModel:
+  pricing: unknown
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Requires approval
+  confidence: medium
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/trivago.png
 name: Trivago
-description: Trivago is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  trivago (trivago N.V.) is a global hotel and accommodation metasearch engine,
+  founded in Düsseldorf, Germany in 2005, that aggregates prices, ratings, and
+  reviews from 250+ booking sites across more than 7 million properties in 190
+  countries and 31 languages. trivago does not hold inventory — its role is to
+  surface the full competitive market and connect travelers to the best available
+  deal, including member, loyalty, and direct-hotel rates that individual booking
+  platforms do not show by default. For programmatic access, trivago is AI-native:
+  it publishes a public, no-auth Model Context Protocol (MCP) connector exposing a
+  search_hotels tool, an invite-only direct hotel-search API, and a partner
+  Connectivity Suite (FastConnect for real-time rates and availability, plus a
+  Conversion Tracking API). It also operates trivago Hotel Manager (Business
+  Studio) for hoteliers.
 url: https://raw.githubusercontent.com/api-evangelist/trivago/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,15 +34,84 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Travel
+- Hotels
+- Accommodation
+- Metasearch
+- Hotel Search
+- Price Comparison
+- Booking
+- Hospitality
+- MCP
+- AI Agents
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: trivago Hotel Search (MCP + direct API)
+  description: >-
+    Public Model Context Protocol connector (search_hotels) plus an invite-only
+    direct hotel-search API delivering live prices ranked by value, enriched
+    property data, and destination price trends across 250+ booking partners.
+  humanURL: https://developer.trivago.com/
+  baseURL: https://mcp.trivago.com/mcp
+  tags:
+  - Hotels
+  - Travel
+  - Metasearch
+  - MCP
+  properties:
+  - type: MCPServer
+    url: mcp/trivago-mcp.yml
+  - type: Documentation
+    url: https://mcp.trivago.com/docs
 common:
 - type: Website
-  url: http://www.trivago.de/
+  url: https://www.trivago.com/
+- type: DeveloperPortal
+  url: https://developer.trivago.com/
+- type: Documentation
+  url: https://developer.trivago.com/fastconnect/fast-connect-overview.html
+- type: APIReference
+  url: https://developer.trivago.com/fastconnect/api-updates.html
+- type: GettingStarted
+  url: https://company.trivago.com/get-listed/
+- type: SignUp
+  url: https://company.trivago.com/get-listed/booking-sites-contact
+- type: Support
+  url: https://support.trivago.com/hc/en-us
+- type: Blog
+  url: https://businessblog.trivago.com/
+- type: GitHubOrganization
+  url: https://github.com/trivago
+- type: PrivacyPolicy
+  url: https://www.trivago.com/en-US/sp/privacy-policy
+- type: Compliance
+  url: https://www.trivago.com/en-US/sp/privacy-policy
+- type: MCPServer
+  name: trivago hosted MCP server
+  url: mcp/trivago-mcp.yml
+- type: LLMsTxt
+  url: llms/trivago-llms.txt
+- type: WellKnown
+  url: well-known/trivago-well-known.yml
+- type: SecurityTxt
+  url: well-known/trivago-security.txt
+- type: Conformance
+  url: conformance/trivago-conformance.yml
+- type: DomainSecurity
+  url: security/trivago-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/trivago-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.trivago.com/cyber-security
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1

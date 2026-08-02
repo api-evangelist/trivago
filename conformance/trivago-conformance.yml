@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.trivago.com/llms.txt
+standards:
+- id: gdpr
+  conforms: true
+  evidence: >-
+    trivago's published llms.txt states "trivago operates in compliance with GDPR
+    (EU/EEA) and applicable local data protection regulations." Privacy Center:
+    https://www.trivago.com/en-US/sp/privacy-policy
+- id: mcp
+  conforms: true
+  evidence: >-
+    Publishes a hosted Model Context Protocol server at https://mcp.trivago.com/mcp
+    (HTTP transport), listed for MCP Registry-compatible clients.
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: >-
+    Serves a valid /.well-known/security.txt (Contact, Policy, Preferred-Languages).
+notes: >-
+  trivago does not store payment details (payments are handled by the booking
+  partner or an authorised payment partner), per its published llms.txt. No SOC 2 /
+  ISO 27001 / PCI DSS certification pages were found on the public surface.
