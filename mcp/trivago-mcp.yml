@@ -17,13 +17,18 @@ server:
   - Any MCP Registry-compatible client
 tools:
 - name: search_hotels
-  description: >-
-    Searches for hotels across 250+ booking platforms and returns live prices
-    ranked by value, with deep links to book directly. Supports natural-language
-    hotel requirements and both dated (exact live prices) and dateless
-    (forecasted prices / price-trend) queries.
-notes: >-
-  trivago's hosted MCP connector for AI agents and agentic workflows. Public,
-  no API keys or configuration required. A separate direct "trivago API" for
-  hotel search, pricing, and property data is available invite-only
-  (enquiries: mcp.support@trivago.com). Documented at https://mcp.trivago.com/docs.
+  description: Searches for hotels across 250+ booking platforms and returns live prices ranked by value,
+    with deep links to book directly. Supports natural-language hotel requirements and both dated (exact
+    live prices) and dateless (forecasted prices / price-trend) queries.
+notes: 'trivago''s hosted MCP connector for AI agents and agentic workflows. Public, no API keys or configuration
+  required. A separate direct "trivago API" for hotel search, pricing, and property data is available
+  invite-only (enquiries: mcp.support@trivago.com). Documented at https://mcp.trivago.com/docs.'
+deployment:
+  mode: none
+  endpoint: https://mcp.trivago.com/mcp
+  verified: probed
+  probe: dead
+  note: the endpoint this manifest claimed did not answer; recorded as none rather than deleted so the
+    claim stays auditable
+  checked: '2026-08-12'
+  source: catalog MCP census
